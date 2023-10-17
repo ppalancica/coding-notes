@@ -10,4 +10,8 @@ class Stack {
     func pop() -> Int? {
         return items.popLast()
     }
+
+    func peek() -> Int? {
+        return items.last
+    } 
 }
