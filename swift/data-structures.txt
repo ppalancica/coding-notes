@@ -1,0 +1,13 @@
+--- Stack of Int items
+
+class Stack {
+    var items: [Int] = []
+    
+    func push(n: Int) {
+        items.append(n)
+    }
+    
+    func pop() -> Int? {
+        return items.popLast()
+    }
+}
