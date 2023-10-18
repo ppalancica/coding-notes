@@ -13,5 +13,19 @@ class Stack {
 
     func peek() -> Int? {
         return items.last
-    } 
+    }
+}
+
+--- Queue of Int items
+
+class Queue {
+    var items: [Int] = []
+    
+    func enqueue(n: Int) {
+        items.append(n)
+    }
+    
+    func dequeue() -> Int? {
+        return items.removeFirst()
+    }
 }
