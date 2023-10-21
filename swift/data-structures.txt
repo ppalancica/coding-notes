@@ -30,7 +30,7 @@ class Queue {
         return items.removeFirst()
     }
 
-    func peak() -> Int? {
+    func peek() -> Int? {
         return items.first
     }
 }
