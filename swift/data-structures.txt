@@ -16,6 +16,24 @@ class Stack {
     }
 }
 
+--- Generic Stack
+
+public struct Stack<T> {
+    private var items: [T] = []
+    
+    public mutating func push(element: T) {
+        items.append(element)
+    }
+
+    public mutating func pop() -> T? {
+        return items.popLast()
+    }
+    
+    public func peek() -> T? {
+        return items.last
+    }
+}
+
 --- Queue of Int items
 
 class Queue {
