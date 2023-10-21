@@ -52,3 +52,22 @@ class Queue {
         return items.first
     }
 }
+
+--- Generic Queue
+
+public struct Queue<T> {
+    private var items: [T] = []
+    
+    public mutating func enqueue(element: T) {
+        items.append(element)
+    }
+    
+    public mutating func dequeue() -> T? {
+        if items.isEmpty { return nil }
+        return items.removeFirst()
+    }
+
+    public func peak() -> T? {
+        return items.first
+    }
+}
