@@ -26,6 +26,7 @@ class Queue {
     }
     
     func dequeue() -> Int? {
+        if items.isEmpty { return nil }
         return items.removeFirst()
     }
 
