@@ -71,3 +71,23 @@ public struct Queue<T> {
         return items.first
     }
 }
+
+--- Generic Node
+
+public class Node<NodeType> {
+    public var value: NodeType
+    public var next: Node?
+    
+    public init(value: NodeType) {
+        self.value = value
+    }
+}
+
+extension Node: CustomStringConvertible {
+    public var description: String {
+        if let next {
+            return "\(value) -> " + String(describing: next) + " "
+        }
+        return "\(value)"
+    }
+}
