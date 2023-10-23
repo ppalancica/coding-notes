@@ -1,0 +1,35 @@
+--- Stack of Int items
+
+class Stack {
+    var items: [Int] = []
+    
+    func push(n: Int) {
+        items.append(n)
+    }
+    
+    func pop() -> Int? {
+        return items.popLast()
+    }
+
+    func peek() -> Int? {
+        return items.last
+    }
+}
+
+--- Generic Stack
+
+public struct Stack<T> {
+    private var items: [T] = []
+    
+    public mutating func push(element: T) {
+        items.append(element)
+    }
+
+    public mutating func pop() -> T? {
+        return items.popLast()
+    }
+    
+    public func peek() -> T? {
+        return items.last
+    }
+}

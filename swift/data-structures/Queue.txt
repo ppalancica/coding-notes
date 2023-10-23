@@ -1,0 +1,37 @@
+--- Queue of Int items
+
+class Queue {
+    var items: [Int] = []
+    
+    func enqueue(n: Int) {
+        items.append(n)
+    }
+    
+    func dequeue() -> Int? {
+        if items.isEmpty { return nil }
+        return items.removeFirst()
+    }
+
+    func peek() -> Int? {
+        return items.first
+    }
+}
+
+--- Generic Queue
+
+public struct Queue<T> {
+    private var items: [T] = []
+    
+    public mutating func enqueue(element: T) {
+        items.append(element)
+    }
+    
+    public mutating func dequeue() -> T? {
+        if items.isEmpty { return nil }
+        return items.removeFirst()
+    }
+
+    public func peek() -> T? {
+        return items.first
+    }
+}

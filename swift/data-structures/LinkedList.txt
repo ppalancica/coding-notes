@@ -1,0 +1,41 @@
+--- Generic Node
+
+public class Node<NodeType> {
+    public var value: NodeType
+    public var next: Node?
+    
+    public init(value: NodeType) {
+        self.value = value
+    }
+}
+
+extension Node: CustomStringConvertible {
+    public var description: String {
+        if let next {
+            return "\(value) -> " + String(describing: next) + " "
+        }
+        return "\(value)"
+    }
+}
+
+--- Generic SinglyLinkedList
+
+public class SinglyLinkedList<ListType> {
+    public var head: Node<ListType>?
+    
+    public var isEmpty: Bool {
+        return head == nil
+    }
+    
+    public func append(value: ListType) {
+        let newNode = Node(value: value)
+        if var h = head {
+            while h.next != nil {
+                h = h.next!
+            }
+            h.next = newNode
+        } else {
+            head = newNode
+        }
+    }
+}
