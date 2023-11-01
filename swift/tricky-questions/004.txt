@@ -21,4 +21,4 @@ c.foo()
 A.
 
 Last line won't compile.
-Although c is of type B, at compile-time it's seem as of type A.
+Although c is of type B, at compile-time it's seen as of type A.

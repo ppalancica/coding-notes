@@ -1,0 +1,24 @@
+Q.
+
+What will this code print?
+
+class A {}
+
+class B: A {
+    func foo() {
+        print("B-foo()")
+    }
+}
+
+let a = A()
+let b = B()
+let c = b as A
+
+if c is B {
+    print(c.foo())
+}
+
+A.
+
+The print(c.foo()) line won't compile.
+Although c is of type B and we would go inside the if statement at run-time, c is still seen as of type A at compile-time.
