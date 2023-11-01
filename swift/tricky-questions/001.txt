@@ -1,0 +1,35 @@
+Q Does this code has any issues?
+
+public struct Stack<T> {
+    private var items: [T] = []
+    
+    public mutating func push(element: T) {
+        items.append(element)
+    }
+
+    public mutating func pop() -> T? {
+        return items.popLast()
+    }
+    
+    public func peek() -> T? {
+        return items.last
+    }
+}
+
+let stack = Stack<Int>()
+print(stack)
+stack.push(element: 1)
+stack.push(element: 2)
+print(stack)
+_ = stack.pop()
+print(stack)
+
+extension Stack: CustomStringConvertible {
+
+    public var description: String {
+        return items.description
+    }
+}
+
+A This line let stack = Stack<Int>() has a compile time error. Must use var, because we mutate the stack variable, which is value type.
+
