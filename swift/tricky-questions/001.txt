@@ -1,4 +1,6 @@
-Q Does this code has any issues?
+Q
+
+- Does this code has any issues?
 
 public struct Stack<T> {
     private var items: [T] = []
@@ -31,5 +33,8 @@ extension Stack: CustomStringConvertible {
     }
 }
 
-A This line let stack = Stack<Int>() has a compile time error. Must use var, because we mutate the stack variable, which is value type.
+A
+
+- This line let stack = Stack<Int>() has a compile time error.
+Must use var, because we mutate the stack variable, which is value type.
 

@@ -1,0 +1,29 @@
+Q
+
+What will this code print:
+
+public struct Dummy {
+    private var name: String?
+    
+    public init() {}
+    
+    public mutating func setName(_ name: String) {
+        self.name = name
+    }
+}
+
+extension Dummy: CustomStringConvertible {
+    public var description: String {
+        return name ?? "<unknown>"
+    }
+}
+
+var dummy = Dummy()
+print(dummy)
+dummy.setName("Dummy 1")
+print(dummy)
+
+A
+
+<unknown>
+Dummy 1
