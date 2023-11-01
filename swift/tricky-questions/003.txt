@@ -1,4 +1,4 @@
-Q
+Q.
 
 What will this code print?
 
@@ -10,8 +10,8 @@ let a = A()
 let b = B()
 let c = b as A
 
-print(String(describing: c))
+print(String(describing: type(of: c)))
 
-A
+A.
 
-Swift_Notes.B
+B

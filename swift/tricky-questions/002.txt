@@ -1,4 +1,4 @@
-Q
+Q.
 
 What will this code print?
 
@@ -23,7 +23,7 @@ print(dummy)
 dummy.setName("Dummy 1")
 print(dummy)
 
-A
+A.
 
 <unknown>
 Dummy 1

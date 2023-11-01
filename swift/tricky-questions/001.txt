@@ -1,4 +1,4 @@
-Q
+Q.
 
 - Does this code has any issues?
 
@@ -33,7 +33,7 @@ extension Stack: CustomStringConvertible {
     }
 }
 
-A
+A.
 
 - This line let stack = Stack<Int>() has a compile time error.
 Must use var, because we mutate the stack variable, which is value type.
