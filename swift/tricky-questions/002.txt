@@ -1,6 +1,6 @@
 Q
 
-What will this code print:
+What will this code print?
 
 public struct Dummy {
     private var name: String?

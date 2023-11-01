@@ -1,0 +1,17 @@
+Q
+
+What will this code print?
+
+class A {}
+
+class B: A {}
+
+let a = A()
+let b = B()
+let c = b as A
+
+print(String(describing: c))
+
+A
+
+Swift_Notes.B
