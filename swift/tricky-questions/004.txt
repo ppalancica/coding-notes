@@ -1,0 +1,24 @@
+Q.
+
+What will this code print?
+
+class A {}
+
+class B: A {
+    func foo() {
+        print("B-foo()")
+    }
+}
+
+let a = A()
+let b = B()
+let c = b as A
+
+b.foo()
+(c as! B).foo()
+c.foo()
+
+A.
+
+Last line won't compile.
+Although c is of type B, at compile-time it's seem as of type A.
