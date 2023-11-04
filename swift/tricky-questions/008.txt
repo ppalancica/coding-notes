@@ -1,0 +1,31 @@
+Q.
+
+What will this code compile? Is anything wrong with it?
+
+protocol StackType {
+    var count: Int { get }
+    mutating func push(_ element: Int)
+    func pop() -> Int?
+}
+
+struct MyStack: StackType {
+    private var values: [Int] = []
+    
+    var count: Int {
+        values.count
+    }
+
+    mutating func push(_ element: Int) {
+        values.append(element)
+    }
+
+    mutating func pop() -> Int? {
+        values.popLast()
+    }
+}
+
+
+A.
+
+No, it won't compile.
+We must use mutation keyword for pop() method inside StackType protocol as well.
