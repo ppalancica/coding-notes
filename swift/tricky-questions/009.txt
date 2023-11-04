@@ -1,0 +1,38 @@
+Q.
+
+What will this code compile? Is anything wrong with it?
+
+protocol Loggable {
+    init(filename: String)
+    func log()
+}
+
+class LocalLogger: Loggable {
+    private let filename: String
+    
+    init(filename: String) {
+        self.filename = filename
+    }
+
+    func log() {
+        print("Logging to Local File")
+    }
+}
+
+final class RemoteLogger: Loggable {
+    private let filename: String
+    
+    init(filename: String) {
+        self.filename = filename
+    }
+
+    func log() {
+        print("Logging to Remote File")
+    }
+}
+
+A.
+
+No, there is a compile error.
+LocalLogger's initialiser must be prefixed with required keyword.
+RemoteLogger initialiser can also be prefixed with required but it's not mandatory.
