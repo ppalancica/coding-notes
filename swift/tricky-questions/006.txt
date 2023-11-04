@@ -1,0 +1,15 @@
+Q.
+
+What will this code compile? What are the types of s1 and s2?
+
+let name = "John"
+let s1 = name as NSString
+let s2 = name._bridgeToObjectiveC()
+
+
+A.
+
+Yes, will compile.
+s1 and s2 are of NSString type.
+
+_bridgeToObjectiveC() comes from _ObjectiveCBridgeable protocol
