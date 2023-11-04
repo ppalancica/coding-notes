@@ -1,0 +1,33 @@
+Q.
+
+What will this code compile?
+
+protocol Player {
+    var name: String { get set }
+    var score: Int { get }
+    var nickname: String { get }
+
+    static var numberOfPlayers: Int { get }
+}
+
+struct Person: Player {
+    var name: String
+    var score: Int
+    var nickname: String {
+        return "Coolio"
+    }
+
+    static var numberOfPlayers = 0
+}
+
+var p1 = Person(name: "Pavel", score: 100)
+p1.score = 50
+
+var p2: Player = Person(name: "Andrew", score: 100)
+p2.score = 50
+
+
+A.
+
+No. There will be a a compile error on last line.
+Although p2 is a Person struct variable, the compiler see p2 as of type Player, where score is declared readonly.
