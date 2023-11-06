@@ -1,0 +1,28 @@
+Q.
+
+How many errors are in this code?
+
+protocol A {
+    static func foo()
+}
+
+class ClassA: A {
+    static func foo() {}
+}
+
+class ClassB: A {
+    class func foo() {}
+}
+
+struct StructC: A {
+    static func foo() {}
+}
+
+A.
+
+There are no errors.
+
+Protocols force us to use static keyword if we want to declare a class or static method.
+
+When the protocol is implementing by a class, we can use either static or class keyword (in case we want to override that method inside subclasses).
+When the protocol is implementing by a struct, we should always use use the static keyword (we cannot use class, because it is a keyword that is used in the context of classes and class inheritance).
