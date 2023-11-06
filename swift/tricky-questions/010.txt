@@ -1,0 +1,21 @@
+Q.
+
+What will this code compile? Is anything wrong with it?
+
+protocol A {
+    static func foo()
+}
+
+
+protocol B: Any {
+    static func foo()
+}
+
+protocol C: AnyObject {
+    class func foo()
+}
+
+A.
+
+No, there is a compile error.
+Protocol C must declare foo() as static.
