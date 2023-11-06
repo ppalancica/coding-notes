@@ -1,6 +1,6 @@
 Q.
 
-How many compile errors are in this code:
+How many compile errors are in this code?
 
 func add<T: Numeric>(a: T, b: T) -> T {
     return a + b

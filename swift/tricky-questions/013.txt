@@ -1,0 +1,18 @@
+Q.
+
+What will this code compile? Is anything wrong with it?
+
+protocol A {
+    class func foo()
+}
+
+protocol B: AnyObject {
+    class func foo()
+}
+
+A.
+
+No, it won't compile.
+We must use the static keyword instead of class.
+
+
