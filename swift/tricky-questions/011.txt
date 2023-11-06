@@ -1,0 +1,25 @@
+Q.
+
+What will this code compile? Is anything wrong with it?
+
+func add1(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+func add2<T>(a: T, b: T) -> T {
+    return a + b
+}
+
+A.
+
+No, there is a compile error.
+Binary operator + cannot be applied because T is too generic.
+Can be fixed by replacing T with T: Numeric in the method signature:
+
+func add2<T: Numeric>(a: T, b: T) -> T {
+    return a + b
+}
+
+
+
+
