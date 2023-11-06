@@ -1,0 +1,25 @@
+Q.
+
+How many compile errors are in this code:
+
+func add<T: Numeric>(a: T, b: T) -> T {
+    return a + b
+}
+
+print(add(a: 1, b: 2))
+print(add(a: 1, b: 2.0))
+print(add(a: 1, b: Float(2)))
+print(add(a: 1.0, b: Float(2)))
+print(add(a: 1.0, b: Double(2.0)))
+print(add(a: Double(1), b: Float(2)))
+print(add(a: Float(1.0), b: CGFloat(2)))
+print(add(a: 1, b: "2"))
+
+A.
+
+There are 3 compile errors.
+Last 3 lines have issues because of type mismatching.
+In the other cases, the compiler will automatically cast to the correct types.
+
+
+
