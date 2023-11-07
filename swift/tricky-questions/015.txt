@@ -1,0 +1,23 @@
+Q.
+
+Will this code compile and run without crashes?
+If yes, what will be printed?
+Will the compiler give any warnings?
+Is anything wrong with it?
+Can this code be improved?
+
+let x: Int? = Int("100")
+let y = Optional<Int>(1_000)
+let z: Optional<Int> = Int("10_000")
+
+print(x!)
+print(y!)
+print(z)
+
+A.
+
+Yes, it will compile and run fine.
+100, 1000 and nil.
+We would have a compile warning on last line.
+We do force unwrapping, which can cause run-time crashes.
+We can use optional bindings to avoid force unwraps, which will make the code safer without crashes in cases where a value is nil.
