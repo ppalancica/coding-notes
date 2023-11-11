@@ -1,0 +1,13 @@
+class Solution {
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+        var numberSet = Set<Int>()
+        for n in nums {
+            if numberSet.contains(n) {
+                return true
+            } else {
+                numberSet.insert(n)
+            }
+        }
+        return false
+    }
+}
