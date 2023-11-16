@@ -1,0 +1,8 @@
+func linearSearch(_ array: [Int], n: Int) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == n {
+            return index
+        }
+    }
+    return nil
+}
