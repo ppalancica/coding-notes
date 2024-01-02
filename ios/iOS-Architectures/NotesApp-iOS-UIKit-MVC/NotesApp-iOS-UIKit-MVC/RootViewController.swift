@@ -7,10 +7,20 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+public class RootViewController: UIViewController {
+    
+    private var notes: [String] = [
+        "Note 1",
+        "Note 2",
+        "Note 3"
+    ]
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+}
+
+private extension RootViewController {
+    func setupUI() {}
 }

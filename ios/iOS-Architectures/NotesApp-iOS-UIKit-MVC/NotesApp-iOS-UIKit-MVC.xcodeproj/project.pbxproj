@@ -57,12 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				6F37FA282B4366A50083C4A5 /* AppDelegate.swift */,
-				6F37FA2A2B4366A50083C4A5 /* SceneDelegate.swift */,
-				6F37FA2C2B4366A50083C4A5 /* RootViewController.swift */,
-				6F37FA2E2B4366A50083C4A5 /* Main.storyboard */,
 				6F37FA312B4366A60083C4A5 /* Assets.xcassets */,
-				6F37FA332B4366A60083C4A5 /* LaunchScreen.storyboard */,
 				6F37FA362B4366A60083C4A5 /* Info.plist */,
+				6F37FA332B4366A60083C4A5 /* LaunchScreen.storyboard */,
+				6F37FA2E2B4366A50083C4A5 /* Main.storyboard */,
+				6F37FA2C2B4366A50083C4A5 /* RootViewController.swift */,
+				6F37FA2A2B4366A50083C4A5 /* SceneDelegate.swift */,
 			);
 			path = "NotesApp-iOS-UIKit-MVC";
 			sourceTree = "<group>";
