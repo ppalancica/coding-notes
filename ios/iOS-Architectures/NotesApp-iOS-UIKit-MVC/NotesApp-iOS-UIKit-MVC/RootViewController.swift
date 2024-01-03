@@ -13,12 +13,6 @@ public final class RootViewController: UIViewController {
         let vc = NotesViewController()
         return vc
     }()
-    
-    private var notes: [String] = [
-        "Note 1",
-        "Note 2",
-        "Note 3"
-    ]
    
     public override func viewDidLoad() {
         super.viewDidLoad()
