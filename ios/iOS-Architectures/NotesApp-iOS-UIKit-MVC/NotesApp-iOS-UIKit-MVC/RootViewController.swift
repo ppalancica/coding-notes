@@ -7,14 +7,19 @@
 
 import UIKit
 
-public class RootViewController: UIViewController {
+public final class RootViewController: UIViewController {
+    
+    private lazy var notesVC: NotesViewController = {
+        let vc = NotesViewController()
+        return vc
+    }()
     
     private var notes: [String] = [
         "Note 1",
         "Note 2",
         "Note 3"
     ]
-
+   
     public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,4 +28,10 @@ public class RootViewController: UIViewController {
 
 private extension RootViewController {
     func setupUI() {}
+    
+    @IBAction func goToAllNotesTapped() {
+        if let nc = navigationController {
+            nc.pushViewController(notesVC, animated: true)
+        }
+    }
 }
