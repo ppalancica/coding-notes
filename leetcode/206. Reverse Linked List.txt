@@ -1,0 +1,30 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public var val: Int
+ *     public var next: ListNode?
+ *     public init() { self.val = 0; self.next = nil; }
+ *     public init(_ val: Int) { self.val = val; self.next = nil; }
+ *     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+ * }
+ */
+class Solution {
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        guard head != nil else { return nil }
+        
+        var previous = head
+        var current = head?.next
+        var temp = head?.next?.next
+        
+        while current != nil {
+            temp = current?.next
+            current?.next = previous
+            previous = current
+            current = temp
+        }
+        
+        head?.next = nil
+
+        return previous
+    }
+}

@@ -6,4 +6,6 @@ Leetcode
 
 141 Linked List Cycle - https://leetcode.com/problems/linked-list-cycle/
 
+206 Reverse Linked List - https://leetcode.com/problems/reverse-linked-list/
+
 217 Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
