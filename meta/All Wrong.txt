@@ -1,0 +1,12 @@
+func getWrongAnswers(_ N: Int, _ C: String) -> String {
+  var result = ""
+  
+  for i in 0..<N {
+    let index = C.index(C.startIndex, offsetBy: i)
+    let correctAnswer = C[index]
+    let wrongAnswer = correctAnswer == "A" ? "B" : "A"
+    result += wrongAnswer
+  }
+  
+  return result
+}
