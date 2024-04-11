@@ -1,0 +1,14 @@
+Brute Force
+
+O(sqrt(n))
+
+class Solution {
+    func isPerfectSquare(_ num: Int) -> Bool {
+        for i in 1...num {
+            if i * i == num { return true }
+            if i * i > num { return false }
+        }
+
+        return false
+    }
+}
