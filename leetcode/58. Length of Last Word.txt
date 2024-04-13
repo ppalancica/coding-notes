@@ -3,18 +3,18 @@ class Solution {
         if s.isEmpty { return 0 }
         
         let array = Array(s)
-        var length = s.count
-        var lastWordLength = 0
+        var lastIndex = s.count - 1
+        var wordLength = 0
 
-        while length > 0 && array[length - 1] == " " {
-            length -= 1
+        while lastIndex >= 0 && array[lastIndex] == " " {
+            lastIndex -= 1
         }
             
-        while length > 0 && array[length - 1] != " " {
-            lastWordLength += 1
-            length -= 1
+        while lastIndex >= 0 && array[lastIndex] != " " {
+            wordLength += 1
+            lastIndex -= 1
         }
             
-        return lastWordLength
+        return wordLength
     }
 }
