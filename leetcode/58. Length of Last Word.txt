@@ -6,7 +6,7 @@ class Solution {
         var lastIndex = s.count - 1
         var wordLength = 0
 
-        while lastIndex >= 0 && array[lastIndex] == " " {
+        while array[lastIndex] == " " {
             lastIndex -= 1
         }
             
