@@ -28,9 +28,9 @@ class Solution {
                 stack.append(node)
                 current = node.left
             }
-            current = stack.popLast()
-            result.append(current!.val)
-            current = current?.right
+            let node = stack.removeLast()
+            result.append(node.val)
+            current = node.right
         }
 
         return result
