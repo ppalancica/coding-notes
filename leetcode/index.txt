@@ -10,6 +10,8 @@ Leetcode
 
 0058. Length of Last Word - https://leetcode.com/problems/length-of-last-word/
 
+0094. Binary Tree Inorder Traversal - https://leetcode.com/problems/binary-tree-inorder-traversal/
+
 0141. Linked List Cycle - https://leetcode.com/problems/linked-list-cycle/
 
 0202. Happy Number - https://leetcode.com/problems/happy-number/
