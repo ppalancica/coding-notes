@@ -1,0 +1,29 @@
+class Solution {
+    func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var seen = Set(nums1)
+        var result: [Int] = []
+
+        for n in nums2 {
+            if seen.contains(n) {
+                result.append(n)
+                seen.remove(n)
+            }
+        }
+
+        return result
+    }
+
+    func intersectionV1(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        let set1 = Set(nums1)
+        let set2 = Set(nums2)
+        var result: [Int] = []
+
+        for n in set1 {
+            if set2.contains(n) {
+                result.append(n)
+            }
+        }
+
+        return result
+    }
+}
