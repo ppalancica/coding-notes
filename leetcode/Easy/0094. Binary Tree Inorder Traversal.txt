@@ -24,6 +24,25 @@ class Solution {
         var stack: [TreeNode] = []
 
         while current != nil || !stack.isEmpty {
+            if let node = current {
+                stack.append(node)
+                current = node.left
+            } else {
+                let previousNode = stack.removeLast()
+                result.append(previousNode.val)
+                current = previousNode.right
+            }
+        }
+
+        return result
+    }
+
+    func inorderTraversalIterativeV2(_ root: TreeNode?) -> [Int] {
+        var result: [Int] = []
+        var current = root
+        var stack: [TreeNode] = []
+
+        while current != nil || !stack.isEmpty {
             while let node = current {
                 stack.append(node)
                 current = node.left
@@ -31,6 +50,24 @@ class Solution {
             let node = stack.removeLast()
             result.append(node.val)
             current = node.right
+        }
+
+        return result
+    }
+
+    func inorderTraversalIterativeV1(_ root: TreeNode?) -> [Int] {
+        var result: [Int] = []
+        var current = root
+        var stack: [TreeNode] = []
+
+        while current != nil || !stack.isEmpty {
+            while let node = current {
+                stack.append(node)
+                current = node.left
+            }
+            current = stack.removeLast()
+            result.append(current!.val)
+            current = current?.right
         }
 
         return result
