@@ -15,18 +15,18 @@
  */
 class Solution {
     func inorderTraversal(_ root: TreeNode?) -> [Int] {
-        return inorderTraversal_iterative(root)
+        return inorderTraversalIterative(root)
     }
 
-    func inorderTraversal_iterative(_ root: TreeNode?) -> [Int] {
+    func inorderTraversalIterative(_ root: TreeNode?) -> [Int] {
         var result: [Int] = []
         var current = root
         var stack: [TreeNode] = []
 
         while current != nil || !stack.isEmpty {
-            while current != nil {
-                stack.append(current!)
-                current = current?.left
+            while let node = current {
+                stack.append(node)
+                current = node.left
             }
             current = stack.popLast()
             result.append(current!.val)
@@ -36,7 +36,7 @@ class Solution {
         return result
     }
 
-    func inorderTraversal_recursive(_ root: TreeNode?) -> [Int] {
+    func inorderTraversalRecursive(_ root: TreeNode?) -> [Int] {
         var result: [Int] = []
 
         func inorder(_ root: TreeNode?) {
