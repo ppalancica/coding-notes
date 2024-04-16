@@ -26,6 +26,8 @@ Leetcode
 
 0226. Invert Binary Tree - https://leetcode.com/problems/invert-binary-tree/
 
+0242. Valid Anagram - https://leetcode.com/problems/valid-anagram/
+
 0349. Intersection of Two Arrays - https://leetcode.com/problems/intersection-of-two-arrays/
 
 0367. Valid Perfect Square https://leetcode.com/problems/valid-perfect-square/
