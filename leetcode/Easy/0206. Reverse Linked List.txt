@@ -8,22 +8,20 @@
  *     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
  * }
  */
+
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
         guard head != nil else { return nil }
         
-        var previous = head
-        var current = head?.next
-        var temp = head?.next?.next
+        var previous: ListNode? = nil
+        var current = head
         
         while current != nil {
-            temp = current?.next
+            var next = current?.next
             current?.next = previous
             previous = current
-            current = temp
+            current = next
         }
-        
-        head?.next = nil
 
         return previous
     }
