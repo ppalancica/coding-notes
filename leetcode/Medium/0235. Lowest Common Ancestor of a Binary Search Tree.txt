@@ -1,0 +1,35 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public var val: Int
+ *     public var left: TreeNode?
+ *     public var right: TreeNode?
+ *     public init(_ val: Int) {
+ *         self.val = val
+ *         self.left = nil
+ *         self.right = nil
+ *     }
+ * }
+ */
+
+class Solution {
+    func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        var current = root
+
+        while current != nil {
+            let currentValue = current?.val ?? 0
+            let pValue = p?.val ?? 0
+            let qValue = q?.val ?? 0
+
+            if pValue < currentValue && qValue < currentValue {
+                current = current?.left
+            } else if pValue > currentValue && qValue > currentValue {
+                current = current?.right
+            } else {
+                break
+            }
+        }
+
+        return current
+    }
+}
