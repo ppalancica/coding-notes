@@ -1,0 +1,14 @@
+class Solution {
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        var uniqueElementIndex = 0
+
+        for i in 1..<nums.count {
+            if nums[uniqueElementIndex] != nums[i] {
+                uniqueElementIndex += 1
+                nums[uniqueElementIndex] = nums[i]
+            }
+        }
+
+        return uniqueElementIndex + 1
+    }
+}
