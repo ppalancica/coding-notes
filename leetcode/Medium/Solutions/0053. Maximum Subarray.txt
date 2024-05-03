@@ -1,0 +1,15 @@
+class Solution {
+    func maxSubArray(_ nums: [Int]) -> Int {
+        if nums.isEmpty { return 0 }
+
+        var best = nums[0]
+        var current = nums[0]
+
+        for n in nums.dropFirst() {
+            current = max(current + n, n)
+            best = max(current, best)
+        }
+        
+        return best;
+    }
+}
