@@ -1,7 +1,13 @@
+---
+
 iOS Architecture:
 
 Components - staff that do the work
 Connectors - tells how the components connect, how the communications style between the components works
 
+---
+
 https://lascorbe.com/posts/2020-04-27-MVPCoordinators-SwiftUI-part1/
 https://clean-swift.com/clean-swift-ios-architecture/
+
+---

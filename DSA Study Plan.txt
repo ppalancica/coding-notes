@@ -1,0 +1,16 @@
+---
+
+Fundamentals of Software Architecture
+
+Learn the intricacies of hash tables, recursion, dynamic programming, trees, graphs, and heaps
+
+---
+
+- Search, sort, and graph algorithms
+- Data structures such as arrays, lists, hash tables, trees, and graphs
+- NP-complete and greedy algorithms
+- Performance trade-offs between algorithms
+- Exercises and code samples in every chapter
+- Over 400 illustrations with detailed walkthroughs
+
+---
