@@ -1,14 +1,12 @@
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {        
-        guard nums.count > 1 else { return [] }
-        
         var nToIdx: [Int: Int] = [:]
-    
-        for (idx, n) in nums.enumerated() {
-            if let secondIndex = nToIdx[target - n] {
-                return [idx, secondIndex]
+
+        for (index, value) in nums.enumerated() {
+            if let firstIndex = nToIdx[target - value] {
+                return [firstIndex, index]
             }
-            nToIdx[n] = idx 
+            nToIdx[value] = index 
         }
         
         return []
