@@ -1,0 +1,16 @@
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {        
+        guard nums.count > 1 else { return [] }
+        
+        var nToIdx: [Int: Int] = [:]
+    
+        for (idx, n) in nums.enumerated() {
+            if let secondIndex = nToIdx[target - n] {
+                return [idx, secondIndex]
+            }
+            nToIdx[n] = idx 
+        }
+        
+        return []
+    }
+}
