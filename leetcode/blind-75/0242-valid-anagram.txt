@@ -1,0 +1,26 @@
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {    
+        guard s.count == t.count else {
+            return false
+        }
+
+        var sCounts: [Character: Int] = [:]
+        var tCounts: [Character: Int] = [:]
+
+        for letter in s {
+            sCounts[letter] = (sCounts[letter] ?? 0) + 1
+        }
+
+        for letter in t {
+            tCounts[letter] = (tCounts[letter] ?? 0) + 1
+        }
+
+        for key in sCounts.keys {
+            if sCounts[key] != tCounts[key] {
+                return false
+            }
+        }
+
+        return true
+    }
+}
