@@ -1,23 +1,23 @@
 class Solution {
     func maxArea(_ height: [Int]) -> Int {
-        guard height.count > 1 else { return 0 }
+        var left = 0
+        var right = height.count - 1
+        var result = 0
 
-        var firstPos = 0
-        var lastPos = height.count - 1
-        var resultArea = 0
-        
-        while firstPos < lastPos {
-            var segmentsCount = lastPos - firstPos
-            var smallerHeight = min(height[firstPos], height[lastPos])
-            resultArea = max(resultArea, smallerHeight * segmentsCount)
-
-            if height[firstPos] <= height[lastPos] {
-                firstPos += 1
+        while left < right {
+            let width = right - left
+            let minHeight = min(height[left], height[right])
+            let currentAmount = width * minHeight
+            
+            result = max(result, currentAmount)
+            
+            if height[left] < height[right] {
+                left += 1
             } else {
-                lastPos -= 1
+                right -= 1
             }
         }
-        
-        return resultArea
+
+        return result
     }
 }
