@@ -1,0 +1,26 @@
+class Solution {
+    func generate(_ numRows: Int) -> [[Int]] {
+        guard numRows > 0 else { return [] }
+
+        if numRows == 1 { return [[1]] }
+
+        var result: [[Int]] = []
+        result.reserveCapacity(numRows)
+        result.append([1]) // Row 0
+
+        for i in 1..<numRows {
+            var currentRow: [Int] = [1]
+            let prevRow = result[i - 1]
+
+            for j in 1..<prevRow.count {
+                let sum = prevRow[j - 1] + prevRow[j]
+                currentRow.append(sum)
+            }
+
+            currentRow.append(1)
+            result.append(currentRow)
+        }
+
+        return result
+    }
+}
