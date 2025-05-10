@@ -4,23 +4,23 @@ class Solution {
 
         if numRows == 1 { return [[1]] }
 
-        var result: [[Int]] = []
-        result.reserveCapacity(numRows)
-        result.append([1]) // Row 0
+        var trianle: [[Int]] = []
+        trianle.reserveCapacity(numRows)
+        trianle.append([1]) // Row 0 is the Top Row and we can directly set it to [1]
 
         for i in 1..<numRows {
-            var currentRow: [Int] = [1]
-            let prevRow = result[i - 1]
+            var row: [Int] = [1]
+            let prevRow = trianle[i - 1]
 
             for j in 1..<prevRow.count {
                 let sum = prevRow[j - 1] + prevRow[j]
-                currentRow.append(sum)
+                row.append(sum)
             }
 
-            currentRow.append(1)
-            result.append(currentRow)
+            row.append(1)
+            trianle.append(row)
         }
 
-        return result
+        return trianle
     }
 }
