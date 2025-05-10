@@ -1,0 +1,47 @@
+class Solution {
+    func spiralOrder(_ matrix: [[Int]]) -> [Int] {
+        var result: [Int] = []
+        if matrix.isEmpty || matrix[0].isEmpty { return result }
+
+        var left = 0
+        var right = matrix[0].count - 1
+        var top = 0
+        var bottom = matrix.count - 1
+
+        let total = matrix[0].count * matrix.count
+
+        while result.count < total {
+            // Go left to right
+            for col in stride(from: left, through: right, by: 1) {
+                result.append(matrix[top][col])
+            }
+            top += 1
+
+            // Go top down
+            if top <= bottom {
+                for row in stride(from: top, through: bottom, by: 1) {                
+                    result.append(matrix[row][right])
+                }
+            }
+            right -= 1
+
+            // Go right to left
+            if top <= bottom {
+                for col in stride(from: right, through: left, by: -1) {
+                    result.append(matrix[bottom][col])
+                }
+            }
+            bottom -= 1
+
+            // Go bottom up
+            if left <= right {
+                for row in stride(from: bottom, through: top, by: -1) {
+                    result.append(matrix[row][left])
+                }
+            }
+            left += 1
+        }
+
+        return result
+    }
+}
