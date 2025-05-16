@@ -1,0 +1,17 @@
+class Parent {
+    let name = "Daddy"
+}
+
+class Child {
+    weak var parent: Parent?
+    
+    func foo() {
+        parent = Parent()
+        print(parent?.name)
+    }
+}
+
+let child = Child()
+child.foo()
+
+// Daddy or nil?
