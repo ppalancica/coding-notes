@@ -1,5 +1,18 @@
 class Solution {
     func canJump(_ nums: [Int]) -> Bool {
+        let lastIndex = nums.count - 1
+        var goal = lastIndex
+        
+        for i in stride(from: lastIndex, to: -1, by: -1) {
+            if i + nums[i] >= goal {
+                goal = i
+            }
+        }
+        
+        return goal == 0
+    }
+
+    func canJumpV1(_ nums: [Int]) -> Bool {
         var maxReach = 0
     
         for i in 0..<nums.count {
