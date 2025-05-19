@@ -1,0 +1,61 @@
+private extension Character {
+    var isAlphanumeric: Bool {
+        return isLetter || isNumber
+    }
+}
+
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        let chars = Array(s.lowercased())
+
+        var left = 0
+        var right = chars.count - 1
+
+        while left < right {
+            while left < right && !chars[left].isAlphanumeric {
+                left += 1
+            }
+            
+            while left < right && !chars[right].isAlphanumeric {
+                right -= 1
+            }
+
+            if chars[left] != chars[right] {
+                return false
+            }
+
+            left += 1
+            right -= 1
+        }
+
+        return true
+    }
+
+    func isPalindromeV1(_ s: String) -> Bool {
+        let characters = Array(s.lowercased())
+
+        var left = 0
+        var right = characters.count - 1
+
+        while left < right {
+            if !characters[left].isAlphanumeric {
+                left += 1
+                continue
+            }
+            
+            if !characters[right].isAlphanumeric {
+                right -= 1
+                continue
+            }
+
+            if characters[left] != characters[right] {
+                return false
+            }
+
+            left += 1
+            right -= 1
+        }
+
+        return true
+    }
+}
