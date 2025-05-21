@@ -7,6 +7,34 @@ private extension Character {
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
         let chars = Array(s.lowercased())
+        var left = 0
+        var right = chars.count - 1
+
+        while left <= right {
+            while left < chars.count && !chars[left].isAlphanumeric {
+                left += 1
+            }
+
+            while right >= 0 && !chars[right].isAlphanumeric {
+                right -= 1
+            }
+
+            // After skipping, check if we've crossed
+            if left > right { break }
+
+            if chars[left] != chars[right] {
+                return false
+            }
+
+            left += 1
+            right -= 1
+        }
+
+        return true
+    }
+
+    func isPalindromeV3(_ s: String) -> Bool {
+        let chars = Array(s.lowercased())
 
         var left = 0
         var right = chars.count - 1
