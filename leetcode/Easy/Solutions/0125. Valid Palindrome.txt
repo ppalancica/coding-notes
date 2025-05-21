@@ -25,6 +25,25 @@ class Solution {
         return true
     }
 
+    func isPalindromeV5(_ s: String) -> Bool {
+        var left = s.startIndex
+        var right = s.index(before: s.endIndex)
+
+        while left < right {
+            if !s[left].isAlphanumeric {
+                left = s.index(after: left)
+            } else if !s[right].isAlphanumeric {
+                right = s.index(before: right)
+            } else {
+                if s[left].lowercased() != s[right].lowercased() { return false }
+                left = s.index(after: left)
+                right = s.index(before: right)                
+            }
+        }
+
+        return true
+    }
+
     func isPalindromeV4(_ s: String) -> Bool {
         let chars = Array(s.lowercased())
         var left = 0
