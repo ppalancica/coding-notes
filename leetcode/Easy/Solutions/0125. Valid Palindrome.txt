@@ -20,14 +20,35 @@ class Solution {
                 right -= 1
             }
 
-            if chars[left] != chars[right] {
-                return false
-            }
+            // To avoid checking if '-' == '-' in strings like "A%-A"
+            // and 'y' == 'y' in strings like 'kayak'
+            if left == right { return true }
+
+            if chars[left] != chars[right] { return false }
 
             left += 1
             right -= 1
         }
 
+        return true
+    }
+
+    func isPalindromeV2(_ s: String) -> Bool {
+        let s = s.lowercased().filter { $0.isLetter || $0.isNumber }
+        
+        if s.isEmpty { return true }
+        
+        var leftIndex = s.startIndex
+        var rightIndex = s.index(before: s.endIndex)
+        
+        while leftIndex < rightIndex {
+            if s[leftIndex] != s[rightIndex] {
+                return false
+            }
+            leftIndex = s.index(after: leftIndex)
+            rightIndex = s.index(before: rightIndex)
+        }
+        
         return true
     }
 
