@@ -1,4 +1,4 @@
-private extension Character {
+extension Character {
     var isAlphanumeric: Bool {
         return isLetter || isNumber
     }
@@ -136,12 +136,13 @@ class Solution {
                 continue
             }
 
-            if characters[left] != characters[right] {
-                return false
+            if characters[left] == characters[right] {
+                left += 1
+                right -= 1
+                continue
             }
 
-            left += 1
-            right -= 1
+            return false
         }
 
         return true
