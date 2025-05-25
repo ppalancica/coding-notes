@@ -1,0 +1,29 @@
+class Solution {
+    func repeatedCharacter(_ s: String) -> Character {
+        var seen = Set<Character>()
+
+        for c in s {
+            if seen.contains(c) {
+                return c
+            }
+            seen.insert(c)
+        }
+        
+        return " " // Should never execute
+    }
+}
+
+class SolutionWithArray {
+    func repeatedCharacter(_ s: String) -> Character {
+        var seen: [Character] = []
+
+        for c in s {
+            if seen.firstIndex(of: c) != nil {
+                return c
+            }
+            seen.append(c)
+        }
+        
+        return " " // Should never execute
+    }
+}
