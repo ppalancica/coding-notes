@@ -8,6 +8,8 @@
 
 0055. Jump Game - https://leetcode.com/problems/jump-game/
 
+0056. Merge Intervals - https://leetcode.com/problems/merge-intervals/
+
 0057. Insert Interval - https://leetcode.com/problems/insert-interval/
 
 0167. Two Sum II - Input Array Is Sorted - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
