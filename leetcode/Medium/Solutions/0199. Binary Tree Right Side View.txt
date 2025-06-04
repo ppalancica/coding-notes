@@ -22,10 +22,10 @@ class Solution {
         var queue: [TreeNode] = [root]
         
         while !queue.isEmpty {
-            let levelCount = queue.count
-            result.append(queue[levelCount - 1].val)
+            let count = queue.count // count == number of nodes at current level
+            result.append(queue[count - 1].val)
             
-            for _ in 0..<levelCount {
+            for _ in 0..<count {
                 let node = queue.removeFirst()
 
                 if let leftChild = node.left { queue.append(leftChild) }
