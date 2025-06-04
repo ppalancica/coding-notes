@@ -1,0 +1,15 @@
+func canAttendMeetings(_ intervals: [[Int]]) -> Bool {
+    // Sort the intervals based on start time
+    let sortedIntervals = intervals.sorted { $0[0] < $1[0] }
+    
+    print(sortedIntervals)
+
+    // Check for overlapping intervals
+    for i in 1..<sortedIntervals.count {
+        if sortedIntervals[i][0] < sortedIntervals[i - 1][1] {
+            return false
+        }
+    }
+
+    return true
+}
