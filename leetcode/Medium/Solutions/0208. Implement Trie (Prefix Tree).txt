@@ -1,0 +1,45 @@
+class TrieNode {
+    var children: [Character: TrieNode] = [:]
+    var isEndOfWord: Bool = false
+}
+
+class Trie {
+
+    private let root = TrieNode()
+
+    init() {}
+
+    func insert(_ word: String) {
+        var current = root
+        for char in word {
+            if current.children[char] == nil {
+                current.children[char] = TrieNode()
+            }
+            current = current.children[char]!
+        }
+        current.isEndOfWord = true
+    }
+
+    func search(_ word: String) -> Bool {
+        guard let node = findNode(word) else {
+            return false
+        }
+        return node.isEndOfWord
+    }
+
+    func startsWith(_ prefix: String) -> Bool {
+        return findNode(prefix) != nil
+    }
+
+    // Helper method to find the node representing the last character of word/prefix
+    private func findNode(_ str: String) -> TrieNode? {
+        var current = root
+        for char in str {
+            guard let nextNode = current.children[char] else {
+                return nil
+            }
+            current = nextNode
+        }
+        return current
+    }
+}
