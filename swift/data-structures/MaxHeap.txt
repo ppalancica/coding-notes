@@ -1,0 +1,83 @@
+--- MaxHeap
+
+struct MaxHeap<T: Comparable> {
+    private var heap: [T] = []
+
+    var isEmpty: Bool { heap.isEmpty }
+
+    var count: Int { heap.count }
+
+    var peek: T? { heap.first }
+
+    mutating func insert(_ value: T) {
+        heap.append(value)
+        siftUp(from: heap.count - 1)
+    }
+
+    mutating func removeMax() -> T? {
+        guard !heap.isEmpty else { return nil }
+        if heap.count == 1 {
+            return heap.removeFirst()
+        }
+
+        let maxValue = heap[0]
+        heap[0] = heap.removeLast()
+        siftDown(from: 0)
+        
+	return maxValue
+    }
+
+    private mutating func siftUp(from index: Int) {
+        var child = index
+        let value = heap[child]
+        var parent = (child - 1) / 2
+
+        while child > 0 && value > heap[parent] {
+            heap[child] = heap[parent]
+            child = parent
+            parent = (child - 1) / 2
+        }
+
+        heap[child] = value
+    }
+
+    private mutating func siftDown(from index: Int) {
+        var parent = index
+        let count = heap.count
+        let value = heap[parent]
+
+        while true {
+            let left = 2 * parent + 1
+            let right = 2 * parent + 2
+            var candidate = parent
+
+            if left < count && heap[left] > heap[candidate] {
+                candidate = left
+            }
+            if right < count && heap[right] > heap[candidate] {
+                candidate = right
+            }
+            if candidate == parent { break }
+
+            heap[parent] = heap[candidate]
+            parent = candidate
+        }
+
+        heap[parent] = value
+    }
+}
+
+--- Usage
+
+var heap = MaxHeap<Int>()
+heap.insert(10)
+heap.insert(4)
+heap.insert(15)
+heap.insert(20)
+
+print(heap.peek!)  // 20
+
+while !heap.isEmpty {
+    print(heap.removeMax()!)
+}
+// Output: 20, 15, 10, 4
