@@ -1,0 +1,1 @@
+The goal is to show how we can use different UI architectures to achieve the same functionality.
